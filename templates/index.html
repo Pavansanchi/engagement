@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch Posts and Products</h1>
+    {% for i in data %}
+        <h2>Title  :{{i.title}}</h2>
+        <p>Description :{{i.description}}</p>
+        <a href="{{i.content_url}}">Contentlink</a>
+        {% for j in i.products %}
+        <p>Product name :{{j.name}}</p>
+        <p>Product image : </p><img src="{{j.image}}" alt="img" style="width: 100px;height: 100px;">
+        {% endfor %}
+        <hr>
+{% endfor %}
+</body>
+</html>
